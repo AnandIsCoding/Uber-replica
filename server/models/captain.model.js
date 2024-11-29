@@ -55,10 +55,12 @@ const captainSchema = mongoose.Schema({
     },
     location:{
         latitude:{
-            type:Number
+            type:Number,
+            required:false
         },
         longitude:{
-            type:Number
+            type:Number,
+            required:false
         }
     },
     socketId:{

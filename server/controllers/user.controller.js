@@ -87,7 +87,7 @@ export const userLoginController = async (req, res) => {
       sameSite: "None",
       expires: new Date(Date.now() + 604800000),
     });
-    return res.status(200).json({success: true, message: `Welcome back ${userAvailable.fullName.firstName} ${userAvailable.fullName.lastName}`});
+    return res.status(200).json({success: true, message: `Welcome back ${userAvailable.fullName.firstName} ${userAvailable.fullName.lastName}`, userAvailable, token});
   } catch (error) {
     res.status(500).json({ message: "Internal Server Error", success: false });
     console.error("login error ", error);

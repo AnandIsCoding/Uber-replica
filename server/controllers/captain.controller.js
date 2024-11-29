@@ -11,7 +11,7 @@ export const captainSignupController = async (req, res) => {
     }
 
     const { fullName, email, password, vehicle, location } = req.body;
-    if (!fullName || !email || !password || !location || !vehicle) {
+    if (!fullName || !email || !password  || !vehicle) {
       return res
         .status(401)
         .json({ success: false, message: "all fields are required" });
@@ -39,11 +39,7 @@ export const captainSignupController = async (req, res) => {
         capacity: vehicle.capacity,
         plate: vehicle.plate,
         vehicleType: vehicle.vehicleType,
-      },
-      location: {
-        latitude: location.latitude,
-        longitude: location.longitude,
-      },
+      }
     });
 
     res
@@ -76,7 +72,7 @@ export const captainLoginController = async (req, res) => {
                 sameSite: "None",
                 expires: new Date(Date.now() + 604800000),
               });
-              return res.status(200).json({success: true, message: `Welcome back ${captainAvailable.fullName.firstName} ${captainAvailable.fullName.lastName}`});
+              return res.status(200).json({success: true, message: `Welcome back captain ${captainAvailable.fullName.firstName} ${captainAvailable.fullName.lastName}`, captainAvailable, token});
     } catch (error) {
         res.status(500).json({ success: false, message: "Internal Server Error" });
         console.error(error)
@@ -103,3 +99,10 @@ export const captainProfileController = async(req,res) =>{
     console.error('Error in fetching captain profile =>> ',error)
   }
 }
+
+
+
+// location: {
+//   latitude: location.latitude,
+//   longitude: location.longitude,
+// },
