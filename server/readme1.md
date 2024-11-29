@@ -1,0 +1,1 @@
+async functions always return a promise. When you use the async keyword before a function, JavaScript ensures that the function will return a promise, regardless of whether you explicitly return a value or use await inside the function.
