@@ -1,7 +1,7 @@
 import express from 'express'
 import {body} from 'express-validator'
 import {userSignupController, userLoginController, userLogoutController, userProfileController} from '../controllers/user.controller.js'
-import { userAuthorization } from '../middlewares/userAuth.middlewares.js'
+import { userAuthorization } from '../middlewares/userauth.middlewares.js'
 const userRouter = express.Router()
 
 userRouter.post('/signup',[
