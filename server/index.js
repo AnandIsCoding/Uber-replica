@@ -14,7 +14,7 @@ const _dirname = path.resolve()
 
 
 app.use(cors({
-    origin:'http://localhost:5173',
+    origin:'https://mycar-hwz0.onrender.com/',
     credentials:true
 }))
 app.use(cookieParser())
