@@ -37,7 +37,7 @@ app.get('*',(_,res)=>{
 connectToDatabase()
 .then(()=>{
     console.log('database connection established')
-    app.listen(PORT,()=>{
+    app.listen(process.env.SERVER_PORT,()=>{
         console.log(`server is listening at http://localhost:${process.env.SERVER_PORT || 8000}`)
     })
 })
