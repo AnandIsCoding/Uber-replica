@@ -26,7 +26,7 @@ function CaptainLogin() {
           toast.error(response.data.message)
         }
       } catch (error) {
-        toast.error('Failed to login server error')
+        toast.error(error.response.data.message)
         console.log('captain login arror => ', error)
       }
       

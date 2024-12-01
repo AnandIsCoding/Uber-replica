@@ -5,10 +5,12 @@ import userRouter from '../server/routes/user.routes.js'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import captainRouter from './routes/captain.routes.js'
+import path from 'path'
 
 dotenv.config()
 const app = express()
 const PORT = process.env.SERVER_PORT || 4000
+const _dirname = path.resolve()
 
 
 app.use(cors({
@@ -23,6 +25,11 @@ app.use(express.json());
 app.use('/api/v1/users', userRouter)
 //captain router
 app.use('/api/v1/captains', captainRouter)
+
+app.use(express.static(path.join(_dirname, "/client/dist")))
+app.get('*',(_,res)=>{
+  res.sendFile(path.resolve(_dirname, "client", "dist", "index.html"))
+})
 
 
 

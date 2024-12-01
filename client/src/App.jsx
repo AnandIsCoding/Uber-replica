@@ -10,6 +10,7 @@ import UserProtectWrapper  from "./pages/protectUser.jsx";
 import CaptainHomePage from "./pages/CaptainHomePage.jsx";
 
 import UserHomePage from "./pages/UserHomePage.jsx";
+import Userriding from "./pages/Userriding.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Welcome />} />
         <Route path="/user/home" element={<UserHomePage/>} />
         <Route path="/user/login" element={<UserLogin />} />
+        <Route path="/user/riding" element={ <Userriding /> } />
         <Route path="/user/signup" element={<UserSignup />} />
         <Route path="/captain/login" element={<CaptainLogin />} />
         <Route path="/captain/signup" element={<CaptainSignup />} />
